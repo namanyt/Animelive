@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "web",
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "dev": "yarn rw dev",
+    "start": "yarn rw start"
+  },
+  "devDependencies": {
+    "@redwoodjs/core": "3.0.3"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "engines": {
+    "node": ">=14.19 <=16.x",
+    "yarn": ">=1.15"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
+  },
+  "packageManager": "yarn@3.2.3",
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/carousel": "^5.4.1",
+    "@mantine/core": "^5.4.1",
+    "@mantine/dates": "^5.4.1",
+    "@mantine/dropzone": "^5.4.1",
+    "@mantine/ds": "^5.4.1",
+    "@mantine/form": "^5.4.1",
+    "@mantine/hooks": "^5.4.1",
+    "@mantine/modals": "^5.4.1",
+    "@mantine/notifications": "^5.4.1",
+    "@mantine/nprogress": "^5.4.1",
+    "@mantine/prism": "^5.4.1",
+    "@mantine/rte": "^5.4.1",
+    "@mantine/spotlight": "^5.4.1",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@tabler/icons": "^1.101.0",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
+    "embla-carousel-react": "^7.0.3",
+    "react-redux": "^8.0.4"
+  }
+}

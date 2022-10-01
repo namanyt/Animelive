@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* background: #1A1B1E */
+}
+
+/* custom css scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+  transition: .5s;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1B1E;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
