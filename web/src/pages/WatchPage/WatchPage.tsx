@@ -9,14 +9,13 @@ import { TypeAnime, URL } from 'src/Utils/types/apiTypes'
 const WatchPage = () => {
   const { id } = useParams()
   const [video, setVideo] = useState<any>();
+  const [meta, setMeta] = useState<any>();
 
-  // obtain episode list from id
-  // get the first element of the episode list
-  // obtain video url from episode id
-  // set video url to video
   fetch(`${URL}/anime-details/${id}`)
     .then((res) => res.json())
     .then((anime: TypeAnime) => {
+      setMeta(<MetaTags title={anime.animeTitle} description={anime.genres.join(', ')} ogContentUrl={anime.animeImg} />)
+
       fetch(`${URL}/vidcdn/watch/${anime.episodesList[0].episodeId}`)
         .then((res) => res.json())
         .then((data) => {
@@ -25,16 +24,21 @@ const WatchPage = () => {
     })
 
   return (
-    <Box style={{
-      // flex box center
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      backgroundColor: useMantineTheme().colors.dark[8],
-    }}>
-      {video}
-    </Box>
+    <>
+      {meta}
+
+      <Box style={{
+        // flex box center
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: useMantineTheme().colors.dark[8],
+      }}>
+        {video}
+      </Box>
+
+    </>
   )
 }
 
